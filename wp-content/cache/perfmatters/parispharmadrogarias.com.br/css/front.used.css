@@ -1883,7 +1883,7 @@ figure {
 	}
 }
 
-@media (min-width: -1px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
 	.elementor-reverse-tablet > .elementor-container > :first-child {
 		-webkit-box-ordinal-group: 11;
 		-ms-flex-order: 10;
@@ -1936,7 +1936,7 @@ figure {
 	}
 }
 
-@media (min-width: 768px) and (max-width: -1px) {
+@media (min-width: 768px) and (max-width: 767px) {
 	.elementor-reverse-tablet > .elementor-container > :first-child,
 	.elementor-reverse-tablet > .elementor-container > :nth-child(2),
 	.elementor-reverse-tablet > .elementor-container > :nth-child(3),
@@ -2343,6 +2343,7 @@ template {
 button {
 	width: auto;
 	-webkit-appearance: button;
+	appearance: button;
 }
 
 [type="button"]::-moz-focus-inner,
@@ -2415,6 +2416,7 @@ button:not(:disabled) {
 
 [type="search"] {
 	-webkit-appearance: textfield;
+	appearance: textfield;
 	outline-offset: -2px;
 }
 
