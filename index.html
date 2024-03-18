@@ -972,6 +972,45 @@
 			}
 		</style>
 
+		<style>
+			/* Estilos para o banner */
+			.overlay {
+				display: none; /* Oculta o overlay por padrão */
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+				z-index: 1000;
+			}
+
+			.banner {
+				display: none; /* Oculta o banner por padrão */
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: #fff;
+				padding: 20px;
+				border-radius: 10px;
+				z-index: 1001;
+				max-width: 90%; /* Define uma largura máxima para o banner */
+				max-height: 90%; /* Define uma altura máxima para o banner */
+				overflow: auto; /* Adiciona uma barra de rolagem quando o conteúdo do banner for maior que o tamanho máximo */
+				display: flex;
+				flex-direction: column; /* Alinha os elementos verticalmente */
+				justify-content: center; /* Centraliza verticalmente */
+				align-items: center; /* Centraliza horizontalmente */
+			}
+
+			.banner img {
+				max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do banner */
+				max-height: 70%; /* Define uma altura máxima para a imagem */
+				margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
+			}
+		</style>
+
 		<link
 			rel="stylesheet"
 			id="elementor-icons-shared-0-css"
@@ -1005,6 +1044,23 @@
 			id="jquery-core-js"
 			defer
 		></script>
+		<script>
+			// Função para fechar o banner e o overlay
+			function fecharBanner() {
+				var overlay = document.getElementById("overlay");
+				var banner = document.getElementById("promo-banner");
+				overlay.style.display = "none";
+				banner.style.display = "none";
+			}
+
+			// Exibir o overlay e o banner após um tempo (ex: 5 segundos)
+			setTimeout(function () {
+				var overlay = document.getElementById("overlay");
+				var banner = document.getElementById("promo-banner");
+				overlay.style.display = "block";
+				banner.style.display = "block";
+			}, 5000); // Tempo em milissegundos (5 segundos)
+		</script>
 		<script
 			type="rocketlazyloadscript"
 			defer="defer"
@@ -1046,6 +1102,15 @@
 		data-rsssl="1"
 		class="home page-template page-template-elementor_canvas page page-id-9 wp-custom-logo jkit-color-scheme elementor-default elementor-template-canvas elementor-kit-12 elementor-page elementor-page-9"
 	>
+		<!-- Overlay -->
+		<div class="overlay" id="overlay"></div>
+
+		<!-- Banner promocional -->
+		<div class="banner" id="promo-banner">
+			<img src="./image/lowprice/lowprice.jpg" alt="Promoções" />
+			<button onclick="fecharBanner()">Fechar</button>
+		</div>
+
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 0 0"
