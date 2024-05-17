@@ -2157,11 +2157,36 @@
 												>
 													<div class="elementor-widget-container">
 														<div class="elementor-button-wrapper">
-															<button
-																onclick="window.open('https://parispharmadrogarias.com.br/wp-content/uploads/2023/09/Imagem-do-WhatsApp-de-2023-09-06-as-15.17.47.jpg')"
-															>
+															<button onclick="toggleImage()" id="toggleButton">
 																Veja nossos brindes!
 															</button>
+															<div id="imageContainer"></div>
+
+															<script>
+																var imageUrl =
+																	"https://parispharmadrogarias.com.br/wp-content/uploads/2023/09/Imagem-do-WhatsApp-de-2023-09-06-as-15.17.47.jpg";
+																var imageContainer =
+																	document.getElementById("imageContainer");
+																var imageOpened = false;
+																var toggleButton =
+																	document.getElementById("toggleButton");
+
+																function toggleImage() {
+																	if (!imageOpened) {
+																		imageContainer.innerHTML =
+																			'<img src="' +
+																			imageUrl +
+																			'" alt="Imagem" />';
+																		toggleButton.textContent = "Fechar imagem";
+																		imageOpened = true;
+																	} else {
+																		imageContainer.innerHTML = "";
+																		toggleButton.textContent =
+																			"Veja nossos brindes!";
+																		imageOpened = false;
+																	}
+																}
+															</script>
 														</div>
 													</div>
 												</div>
